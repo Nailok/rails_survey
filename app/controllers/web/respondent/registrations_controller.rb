@@ -1,4 +1,5 @@
-class Web::Respondent::RespondentsController < Web::Respondent::ApplicationController
+class Web::Respondent::RegistrationsController < Web::Respondent::ApplicationController
+  skip_before_action :authenticate_respondent!, only: %i[new create]
   def new
     @respondent = Respondent.new
   end
@@ -7,7 +8,7 @@ class Web::Respondent::RespondentsController < Web::Respondent::ApplicationContr
     @respondent = Respondent.new(respondent_attrs)
 
     if @respondent.save
-      redirect_to admin_users_path
+      redirect_to new_respondent_session_path
     else
       render action: :new
     end
