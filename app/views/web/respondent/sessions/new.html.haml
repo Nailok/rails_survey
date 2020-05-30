@@ -1,1 +1,4 @@
-= react_component "RespondentSignIn"
+-# = react_component "RespondentSignIn"
+= simple_form_for :respondent, url: respondent_session_path do |f|
+  = f.input :phone
+  = f.button :submit, t('.sign_in'), class: 'btn btn-info'
