@@ -6,7 +6,8 @@
     %th{width: '20%'}= t('.control')
     %br
     - if @question.kind != 'input'
-      =link_to t('.add_variant'), new_respondent_question_variant_path(@question), class: 'btn btn-info'
+      = link_to t('.add_variant'), new_respondent_question_variant_path(@question), class: 'btn btn-info'
+      = link_to t('.show_stats'), respondent_statistic_path(@question) , class: 'btn btn-info'
 
   - @question.variants.each do |variant|
     %tr

@@ -112,6 +112,7 @@ ActiveRecord::Schema.define(version: 2020_05_21_170134) do
     t.index ["question_id"], name: "index_variants_on_question_id"
   end
 
+  add_foreign_key "answers", "variants"
   add_foreign_key "answers", "questions"
   add_foreign_key "questions", "surveys"
   add_foreign_key "survey_users", "surveys"
