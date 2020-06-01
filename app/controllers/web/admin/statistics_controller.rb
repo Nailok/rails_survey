@@ -1,4 +1,4 @@
-class Web::Respondent::StatisticsController < Web::Respondent::ApplicationController
+class Web::Admin::StatisticsController < Web::Admin::ApplicationController
   def show
     @question = Question.find(params[:id])
     @variants = @question.variants
@@ -6,3 +6,4 @@ class Web::Respondent::StatisticsController < Web::Respondent::ApplicationContro
     # @count = Answers.where(question_id: @questions.id).count
   end
 end
+

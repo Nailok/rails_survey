@@ -50,6 +50,7 @@ Rails.application.routes.draw do
       resources :respondents, only: %i[new create]
       resources :tags
 
+      resources :statistics, only: %i[index show]
       resources :surveys, only: %i[index new create show edit update destroy], shallow: true do
         resources :questions, only: %i[index new create destroy show], shallow: true do
           resources :variants, only: %i[index new create destroy edit update show]
